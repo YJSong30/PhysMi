@@ -1,0 +1,39 @@
+# Python virtual environment
+**/venv/
+backend/venv/
+
+# Python bytecode and caches
+**/__pycache__/
+**/*.py[cod]
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDE files (add your specific IDE if needed)
+.vscode/
+.idea/
+
+# Database files (local development)
+# We generally don't commit the actual database file
+*.db
+*.sqlite3
+backend/*.db
+backend/*.sqlite3
+
+# Environment variables file
+.env
+backend/.env
+
+# Node modules (for frontend later)
+**/node_modules/
+frontend/node_modules/
+
+# Build artifacts (for frontend later)
+**/build/
+frontend/build/
+**/dist/
+frontend/dist/
+
+# Log files
+*.log
