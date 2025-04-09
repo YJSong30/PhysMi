@@ -1,9 +1,14 @@
+# app.py's job: 
+# - handle HTTP requests/responses
+# - parse incoming data
+# - validate inputs (at HTTP level)
+# - call appropriate business logic/data access functions
+
 from flask import Flask
 from database import close_db
 import os
 
 app = Flask(__name__)
-
 
 app.config['DATABASE_NAME'] = os.environ.get('DATABASE_NAME')
 app.config['DATABASE_USER'] = os.environ.get('DATABASE_USER')

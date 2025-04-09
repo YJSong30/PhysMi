@@ -1,4 +1,7 @@
-# backend/database.py
+# database.py's job: 
+# - encapsulate all direct database interactions
+# - provide functions like add_user_to_db, get_user_by_username, create_recipe_in_db, etc using psycopg2
+
 import psycopg2
 import psycopg2.extras # To get results as dictionaries
 from flask import current_app, g # To access app config and request context
