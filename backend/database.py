@@ -81,37 +81,38 @@ def init_db():
     finally:
         pass
 
-def add_user_to_db(username, email, password_hash):
-    db_conn = get_db()
+# add user to database 
+# def add_user_to_db(username, email, password_hash):
+#     db_conn = get_db()
 
-    if not db_conn:
-        return None
+#     if not db_conn:
+#         return None
 
-    cursor = db_conn.cursor()
-    new_user_id = None
+#     cursor = db_conn.cursor()
+#     new_user_id = None
 
-    try:
-        cursor.execute("INSERT INTO users (username, email, password_hash) VALUES (%s, %s, %s) RETURNING id", (username, email, password_hash))
-        result_row = cursor.fetchone()
+#     try:
+#         cursor.execute("INSERT INTO users (username, email, password_hash) VALUES (%s, %s, %s) RETURNING id", (username, email, password_hash))
+#         result_row = cursor.fetchone()
 
-        if result_row:
-            new_user_id = result_row[0]
-            db_conn.commit()
-            print(f"User '{username}' added with ID: {new_user_id}")
-            return new_user_id
+#         if result_row:
+#             new_user_id = result_row[0]
+#             db_conn.commit()
+#             print(f"User '{username}' added with ID: {new_user_id}")
+#             return new_user_id
     
-    except psycopg2.IntegrityError as e:
-        db_conn.rollback()
-        return (False, f"Integrity error: {e}")
+#     except psycopg2.IntegrityError as e:
+#         db_conn.rollback()
+#         return (False, f"Integrity error: {e}")
     
-    except psycopg2.Error as e:
-        db_conn.rollback()
-        print(f"Error adding a user: {e}")
-        return (False, f"Database error occured: {e}")
+#     except psycopg2.Error as e:
+#         db_conn.rollback()
+#         print(f"Error adding a user: {e}")
+#         return (False, f"Database error occured: {e}")
 
 
-    finally:
-        cursor.close()
+#     finally:
+#         cursor.close()
 
 # --- Function to create a Flask CLI command ---
 @click.command('init-db') # Defines the command name 'flask init-db'

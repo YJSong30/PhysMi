@@ -37,3 +37,5 @@ frontend/dist/
 
 # Log files
 *.log
+.TODO
+.env
