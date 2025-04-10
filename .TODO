@@ -1,0 +1,6 @@
+✔ define the structure for storing user information in the database by creating a 'users' table @done(25-04-09 14:31)
+  ☐ username
+  ☐ hashed password
+  ☐ email address
+
+☐ create api endpoint for user to sign up for application by providing username, email, password
