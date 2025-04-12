@@ -8,12 +8,19 @@
 
     npm install
 
-### run project
+### techstack
 
-    docker-compose up -d nats mongo mongo-express
-    npm run dev
-
-### to down project
-
-    ctrl + c
-    docker-compose down
+    React/TypeScript
+    Flask
+    PostgreSQL
+    Firebase
+    MaterialUI
+    Docker/AWS ECR
+    AI/LLM: GPT, Claude, or Gemini
+    RAG Components:
+        - Pinecone
+        - Sentence Transformers
+        - LangChain
+    Cloud File Storage: AWS S3
+    Cloud Deployement: AWS ECS + Fargate
+    Cloud Database: AWS RDS
