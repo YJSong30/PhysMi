@@ -1,9 +1,13 @@
 ✔ define the structure for storing user information in the database by creating a 'users' table @done(25-04-09 14:31)
-  ☐ username
-  ☐ hashed password
-  ☐ email address
+  ✔ username @done(25-04-12 11:18)
+  ✔ hashed password @done(25-04-12 11:18)
+  ✔ email address @done(25-04-12 11:18)
 
 ✔ create api endpoint for user to sign up for application by providing username, email, password @done(25-04-09 23:18)
 
-☐ implement mechanism to track user's auth state globally within react app using firebase build-in tools and react's context api
+✔ implement mechanism to track user's auth state globally within react app using firebase build-in tools and react's context api @done(25-04-12 11:17)
+
+☐ backend token verification - firebase-admin
+
+☐ create initial structure for dashboard view for logged-in users
 

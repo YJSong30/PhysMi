@@ -7,7 +7,7 @@ POST http://127.0.0.1:5000/api/users/register
 Content-Type: application/json
 
 {
-  "username": "cooluser123",
-  "email": "cool.user@example.com",
+  "username": "cooluser12345",
+  "email": "coollll.user@example.com",
   "password": "mysecretpassword"
 }

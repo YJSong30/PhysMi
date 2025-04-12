@@ -57,7 +57,8 @@ class AuthFirebase {
     }
   }
 
-  async signOutUser() {
+  async signOutUser(): Promise<void> {
+    //TODO: refactor and make centralized with Context later
     await signOut(this.auth);
     console.log("user has signed out");
   }
