@@ -8,6 +8,11 @@
 
     npm install
 
+### run project
+
+    frontend: npm run dev
+    backend: python app.py
+
 ### techstack
 
     React/TypeScript
