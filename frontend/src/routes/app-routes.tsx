@@ -4,35 +4,22 @@ import { User } from 'firebase/auth'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 import Dashboard from '../pages/dashboard-page'
 import AuthPage from '../pages/auth-page'
+import { useAuth } from '../hooks/useAuth'
 
 const authFirebase = new AuthFirebase()
 
 function AppRoutes() {
-  const [currentUser, setCurrentUser] = useState<User | null>(null);
-  const [loading, setLoading] = useState<boolean>(true);
+  // const [currentUser, setCurrentUser] = useState<User | null>(null);
+  // const [loading, setLoading] = useState<boolean>(true);
 
-  useEffect(() => {
-    console.log("Setting up auth listener...")
+  const { currentUser, loading } = useAuth();
 
-    // callback: when auth state changes
-    const handleAuthStateChange = (user: User | null) => {
-      console.log("Auth state changed:", user ? `User: ${user.uid}` : "No user");
-      setCurrentUser(user);
-      setLoading(false);
-    };
+  console.log("AppRoutes rendering - Loading:", loading, "User:", currentUser?.uid)
 
-    // store returned unsubscribe function 
-    const unsubscribe = authFirebase.authSubscriber(handleAuthStateChange);
-
-    // cleanup function
-    return () => {
-      console.log("cleaning up auth listener...");
-      unsubscribe();
-    }
-
-    // loading indicator?
-
-  }, []);
+  // if (loading) {
+  //   console.log("AppRoutes: Still loading auth state...");
+  //   return <LoadingSpinner />;
+  // }
 
   return (
     <Router>
